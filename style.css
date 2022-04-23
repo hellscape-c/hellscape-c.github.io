@@ -62,11 +62,17 @@ body > .info {
     display: block;
     padding: 1rem;
     padding-top: 0;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+body > .info span {
+    display: block;
+    margin: auto;
+    max-width: 500px;
     user-select: text;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    max-height: 100%;
-    overflow-y: auto;
 }
 
 
