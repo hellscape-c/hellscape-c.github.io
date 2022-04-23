@@ -73,6 +73,7 @@ body > .info span {
     user-select: text;
     white-space: pre-wrap;
     overflow-wrap: break-word;
+    padding-bottom: 3rem;
 }
 
 
