@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset=UTF-8>
+        <meta name=viewport content="width=device-width, initial-scale=1.0">
+        <script src=jquery-3.6.0.min.js></script>
+        <link rel=icon href=assets/heart.ico>
+        <title>hellscape</title>
+
+        <link rel=stylesheet href=style.css>
+        <script type=module src=script.js defer></script>
+    </head>
+    <body>
+        <div id=content>
+            <div class=col></div>
+        </div>
+        <div id=controls>
+            <div class=toggle>
+                <a class="icon info" href=info></a>
+                <button class="icon list"></button>
+                <button class="icon plus"></button>
+                <button class="icon minus"></button>
+                <button class="icon scroll"></button>
+            </div>
+            <button class="icon heart"></button>
+        </div>
+        <a id=info target=_blank>
+            <div class=account>
+                <img class=avatar>
+                <div class=name>
+                    <span class=display></span>
+                    <span class=user></span>
+                </div>
+            </div>
+            <span class=description></span>
+        </a>
+        <div id=list>
+            <div class=content>
+                <span class=header>View your list</span>
+                <span>You can put the link to a twitter list below to show its most recent images and videos shuffled in the gallery, the list cannot be private</span>
+                <input class=input type=text placeholder="Link your list">
+                <span class=error>Not a valid link!</span>
+                <div class=buttons>
+                    <button class=cancel>CANCEL</button>
+                    <button class=view>VIEW</button>
+                </div>
+                <span class=header>View other lists</span>
+                <div class=lists>
+                    <a class=list href="/?/1508946635535093760">
+                        <img src="/assets/lists/cat.jpg">
+                        <div class=info>
+                            <span class=top>🐱</span>
+                            <span class=bot>cats</span>
+                        </div>
+                    </a>
+                    <a class=list href="/?/1517617739468263426">
+                        <img src="/assets/lists/bunny.png">
+                        <div class=info>
+                            <span class=top>🐰</span>
+                            <span class=bot>bunnies</span>
+                        </div>
+                    </a>
+                    <a class=list href="/?/1517619918061113344">
+                        <img src="/assets/lists/aesthetic.jpg">
+                        <div class=info>
+                            <span class=top>⭐</span>
+                            <span class=bot>aesthetics</span>
+                        </div>
+                    </a>
+                    <a class=list href="/?/1459650492267700235">
+                        <img src="/assets/lists/john.jpg">
+                        <div class=info>
+                            <span class=top>❤️</span>
+                            <span class=bot>john and archillect</span>
+                        </div>
+                    </a>
+                    <a class=list href="/?/1517617137409478661">
+                        <img src="/assets/lists/gradient.png">
+                        <div class=info>
+                            <span class=top>⭕</span>
+                            <span class=bot>circle gradients</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
