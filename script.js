@@ -25,7 +25,7 @@ const get = id => new Promise((resolve, reject) => {
             reject(err);
         }
     }
-    let url = `https://178.116.73.195:1000/cat/${id}/${get.next || ''}`;
+    let url = `https://178.116.73.195:443/hsc/${id}/${get.next || ''}`;
     xmlhttp.open('GET', url, true);
     xmlhttp.send();
 })
