@@ -75,7 +75,8 @@ window.onload = () => {
             let down = d < 0 && l > 0;
             let up = d >= 0 && u < items.length - 1;
             const add = e => e.includes('.mp4') ? vid(e, cb) : img(e, cb);
-            const copy = e => e.parentElement ? cb(Object.assign(e.cloneNode(true), e)) : cb(e);
+            const play = e => cb(e.tagName === 'VIDEO' ? (e.play(), e) : e);
+            const copy = e => play(e.parentElement ? Object.assign(e.cloneNode(true), e) : e);
             const get = (l, i) => !l[i].e ? l[i] = Object.assign(add(l[i].file), { e: true }, l[i]) : copy(l[i]);
             if (r || down || up) (m(d, 1), get(items, d < 0 ? l : u));
             else request(d, () => (push(d, cb, true)));
@@ -108,8 +109,13 @@ window.onload = () => {
             set('autoplay');
             v.oncanplay = () => {
                 v.oncanplay = undefined;
+                clearTimeout(t);
                 cb(v)
-            };
+            }
+            let t = setTimeout(() => {
+                if (!v.oncanplay) return;
+                v.oncanplay();
+            }, 1000);
             v.append(s);
             return v;
         }
@@ -118,14 +124,19 @@ window.onload = () => {
             let i = document.createElement('img');
             i.onload = () => {
                 i.onload = undefined;
+                clearTimeout(t);
                 cb(i);
             }
+            let t = setTimeout(() => {
+                if (!i.onload) return;
+                i.onload();
+            }, 1000);
             i.src = src;
             return i;
         }
 
         const fill = (cols, cb) => {
-            if (removed()) return;
+            if (removed()) return cb();
 
             const shift = (col, d, e) => {
                 let [up, down] = [col.up, content.down];
@@ -143,7 +154,7 @@ window.onload = () => {
             }
 
             const add = (col, d) => push(d, e => {
-                if (removed()) return;
+                if (removed()) return cb();
                 d < 0 ? shift(col, 1, e) : col.append(e);
                 requestAnimationFrame(() => fill(cols, cb));
             })
