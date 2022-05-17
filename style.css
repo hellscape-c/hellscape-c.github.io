@@ -52,17 +52,6 @@ a, a:link, a:visited, a:hover, a:active, a:focus, a:focus-within, a:focus-visibl
     color: inherit;
 }
 
-.disclaimer {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    white-space: pre-wrap;
-    color: var(--foreground);
-}
-
-#controls {
-    z-index: 4 !important;
-}
-
 
 
 /**/

@@ -31,8 +31,6 @@ const get = id => new Promise((resolve, reject) => {
 })
 
 window.onload = () => {
-    return;
-
     const container = (id, ...items) => {
         let el = document.querySelector(id);
         items.forEach(s => el[s] = el.querySelector('.' + s));
